@@ -53,6 +53,7 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
+
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -124,6 +125,12 @@
   </data>
   <data name="Deleted" xml:space="preserve">
     <value>Deleted Successfully</value>
+  </data>
+  <data name="DepartmementId" xml:space="preserve">
+    <value>Departmement Id</value>
+  </data>
+  <data name="DepartmementIdIsNotExist" xml:space="preserve">
+    <value>Departmement Is Not Exist</value>
   </data>
   <data name="IsExist" xml:space="preserve">
     <value>Is Already Exist</value>

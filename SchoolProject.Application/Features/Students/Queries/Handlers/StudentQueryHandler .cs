@@ -69,6 +69,31 @@ namespace SchoolProject.Application.Features.Students.Queries.Handlers
             paginatedList.Meta = new { Count = paginatedList.Data.Count() };
             return paginatedList;
         }
+
+        public async Task<PaginatedResult<GetStudentPaginatedListResponse>> HandleWithoutExpression(GetStudentPaginatedListQuery request, CancellationToken cancellationToken)
+        {
+
+
+
+            var filterQuery = _studentRepository.FilterStudentPaginatedQueryable(request.OrderBy, request.Search);
+
+            var paginatedList = await filterQuery.Select(x => new GetStudentPaginatedListResponse() { Name = x.Localize(x.NameAr, x.NameEn), Address = x.Address, DepartmentName = x.Department.Localize(x.Department.DNameAr, x.Department.DNameEn), StudID = x.StudID }).ToPaginatedListAsync(request.PageNumber, request.PageSize);
+
+            paginatedList.Meta = new { Count = paginatedList.Data.Count() };
+            return paginatedList;
+        }
+        public async Task<PaginatedResult<GetStudentPaginatedListResponse>> HandleWithMapping(GetStudentPaginatedListQuery request, CancellationToken cancellationToken)
+        {
+
+
+
+            var filterQuery = _studentRepository.FilterStudentPaginatedQueryable(request.OrderBy, request.Search);
+
+            var paginatedList = await _mapper.ProjectTo<GetStudentPaginatedListResponse>(filterQuery).ToPaginatedListAsync(request.PageNumber, request.PageSize);
+
+            paginatedList.Meta = new { Count = paginatedList.Data.Count() };
+            return paginatedList;
+        }
     }
 
 

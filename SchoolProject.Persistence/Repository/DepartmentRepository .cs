@@ -27,6 +27,12 @@ namespace SchoolProject.Persistence.Repository
 
             return result;
         }
+
+        public Task<bool> IsDepartementIdExist(int departmetnId)
+        {
+            var query = GetTableAsTracking();
+            return query.AnyAsync(x => x.DID.Equals(departmetnId));
+        }
         #endregion
 
         #region Handle Functions

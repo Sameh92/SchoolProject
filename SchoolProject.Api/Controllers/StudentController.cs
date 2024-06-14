@@ -47,7 +47,7 @@ namespace SchoolProject.Api.Controllers
         }
 
         [HttpDelete(Router.StudentRouting.Delete)]
-        public async Task<IActionResult> EditStudent([FromRoute] int id)
+        public async Task<IActionResult> DeleteStudent([FromRoute] int id)
         {
             var response = await Mediator.Send(new DeleteStudentCommand(id));
             return NewResult(response);
