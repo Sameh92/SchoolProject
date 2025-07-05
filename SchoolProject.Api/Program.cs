@@ -24,7 +24,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(option =>
 
 
 #region Dependency injections
-builder.Services.AddApplicationDependencies().AddPersistenceDependencies().AddServiceRegisteration();
+builder.Services.AddApplicationDependencies().AddPersistenceDependencies().AddIdentityDependencies();
 
 
 #endregion

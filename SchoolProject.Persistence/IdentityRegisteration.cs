@@ -5,9 +5,9 @@ using SchoolProject.Infrastructure.Context;
 
 namespace SchoolProject.Persistence
 {
-    public static class ServiceRegisteration
+    public static class IdentityRegisteration
     {
-        public static IServiceCollection AddServiceRegisteration(this IServiceCollection services)
+        public static IServiceCollection AddIdentityDependencies(this IServiceCollection services)
         {
             services.AddIdentity<User, IdentityRole<int>>(option =>
             {
@@ -25,7 +25,7 @@ namespace SchoolProject.Persistence
                 // User settings.
                 option.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-                option.User.RequireUniqueEmail = false;
+                option.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders();
 
             return services;

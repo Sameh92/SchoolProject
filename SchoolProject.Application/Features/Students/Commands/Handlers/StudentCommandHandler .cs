@@ -49,6 +49,7 @@ namespace SchoolProject.Application.Features.Students.Commands.Handlers
 
             if (student == null) return NotFound<string>("Student is Not Found");
 
+
             var newStudent = _mapper.Map(request, student);
 
             await _studentRepository.UpdateAsync(newStudent);

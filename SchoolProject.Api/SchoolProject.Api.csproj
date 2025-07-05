@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SchoolProject.Application\SchoolProject.Application.csproj" />
     <ProjectReference Include="..\SchoolProject.Persistence\SchoolProject.Persistence.csproj" />
 
   </ItemGroup>

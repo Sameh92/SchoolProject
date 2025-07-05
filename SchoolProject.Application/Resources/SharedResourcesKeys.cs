@@ -17,6 +17,10 @@
         public const string IsNotExist = "IsNotExist";
         public const string DepartmementIdIsNotExist = "DepartmementIdIsNotExist";
         public const string DepartmementId = "DepartmementId";
+        public const string PasswordNotEqualConfirmPass = "PasswordNotEqualConfirmPass";
+        public const string EmailIsExist = "EmailIsExist";
+        public const string UserNameIsExist = "UserNameIsExist";
+        public const string FaildToAddUser = "FaildToAddUser";
 
     }
 }
